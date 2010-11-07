@@ -1,0 +1,36 @@
+# dx
+
+A plugin for leiningen to work with android
+
+## Installation
+Build the project as per normal with lein
+Install the plugin into ~/.lein/plugins/ 
+TODO: Put this into clojars when its decent.
+run lein help, you should see a lein dx.
+
+## Usage
+Create a normal project, run lein dx after you compile the project. 
+The following variables in the defproject expression are respected for now:
+
+:android-platform-tooldir "Path to android tools"
+
+eg:
+(defproject example  "1.0.0-SNAPSHOT"
+  :description "FIXME: write"
+  :dependencies [[org.clojure/clojure "1.2.0"]
+                 [org.clojure/clojure-contrib "1.2.0"]]
+  :dev-dependencies [[swank-clojure "1.2.0"]]
+  :android-platform-tooldir "/home/johndough/android-sdk-linux_x86/platforms/android-8/tools"
+  :main example.core
+  )
+
+
+Right now the plugin can run dex over your classfiles so they can run on an android, it does not give you full toolchain functionality so its not very useful.
+
+The generated jar file that can be dropped into the emulator and run will be called $projectname-android.jar
+
+## License
+
+Copyright (C) 2010 
+
+Distributed under the Eclipse Public License, the same as Clojure.
